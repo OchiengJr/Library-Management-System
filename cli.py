@@ -1,5 +1,4 @@
 import os
-from peewee import *
 from orm import Book, Author
 
 def clear_screen():
@@ -90,9 +89,33 @@ def main():
     while True:
         display_menu()
         choice = input("Enter your choice: ")
-        if choice == '1':
+        try:
+            choice = int(choice)
+        except ValueError:
+            print("Invalid choice. Please enter a number.")
+            continue
+
+        if choice == 1:
             add_book()
-        elif choice == '2':
+        elif choice == 2:
             delete_book()
-        elif choice == '3':
-            view
+        elif choice == 3:
+            view_all_books()
+        elif choice == 4:
+            find_book_by_title()
+        elif choice == 5:
+            add_author()
+        elif choice == 6:
+            delete_author()
+        elif choice == 7:
+            view_all_authors()
+        elif choice == 8:
+            find_author_by_name()
+        elif choice == 9:
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
