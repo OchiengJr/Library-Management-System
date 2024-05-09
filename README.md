@@ -46,7 +46,7 @@ Dependencies
 
 Peewee: Python library for interacting with databases using ORM (Object-Relational Mapping).
 
-Authors
+Author
 
 Chrispine Owino Ochieng.
 
